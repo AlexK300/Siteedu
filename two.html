@@ -1,16 +1,157 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Новая вкладка</title>
+    <title>Сборка ПК</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        body {
+            background-color: #353535;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 16px;
+            color: rgb(204, 204, 204);
+        }
+
+        h1, p {
+            margin: 10px;
+            padding: 0;
+        }
+
+        select {
+            margin: 10px;
+            padding: 5px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .b1 {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            text-align: center;
+            background-color: #a10000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            justify-content: center;
+            position: fixed;
+            bottom: 0.5%;
+            right: 3%;
+        }
+
+        .b2 {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #26a100;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            justify-content: center;
+            padding: 20px 50px;
+            font-size: 15px;
+        }
+        .b2:hover {
+            background-color: #006600;
+                transition: all 0.3s;
+        }
     </style>
 </head>
 <body>
-    <h1>Итак, ты всё-таки решил(-а) выбрать компьютер/h1>
-    <p></p>
-    <p>Заинтересовался? Жми на кнопку в уголке</p>
-    <a class='b1' href="two.html">Собрать ПК</a>
+    <h1>Итак, ты всё-таки решил(-а) выбрать компьютер</h1>
+    <p>Поехали!</p>
+    <p>Сначала выберем процессор:</p>
+    <select id="cpu">
+        <optgroup label="Intel">
+            <option value="i3">Intel Core i3 (Подходит для офисной работы)</option>
+            <option value="i5">Intel Core i5 (Подходит для личных целей)</option>
+            <option value="i7">Intel Core i7 (Подходит для игр)</option>
+            <option value="i9">Intel Core i9 (Подходит для тяжелых игр или работы с тяжелыми программами)</option>
+        </optgroup>
+        <optgroup label="AMD">
+            <option value="ryzen3">AMD Ryzen 3 (Подходит для офисной работы)</option>
+            <option value="ryzen5">AMD Ryzen 5 (Подходит для личных целей)</option>
+            <option value="ryzen7">AMD Ryzen 7 (Подходит для игр)</option>
+            <option value="ryzen9">AMD Ryzen 9 (Подходит для тяжелых игр или работы с тяжелыми программами)</option>
+        </optgroup>
+    </select>
+    <p>Теперь видеокарту:</p>
+    <select id="gpu">
+        <optgroup label="Интегрированные (Подходят для большинства задач)">
+            <option value="irisxe">Intel Iris Xe (Подходит для большинства задач)</option>
+        </optgroup>
+        <optgroup label="Дискретные (Подходят для игр или профессиональной работы)">
+            <optgroup label="Nvidia">
+                <option value="gtx1050">Nvidia GeForce GTX 1050 (Для базовых ПК)</option>
+                <option value="gtx1060">Nvidia GeForce GTX 1060 (Для небольших игр)</option>
+                <option value="gtx1070">Nvidia GeForce GTX 1070 (Подходит для средних игр и работы с графикой)</option>
+                <option value="rtx3060">Nvidia GeForce RTX 3060 (Для игр)</option>
+                <option value="rtx4090">Nvidia GeForce RTX 4090 (Для тяжелых игр или работы с тяжелыми программами)</option>
+            </optgroup>
+            <optgroup label="AMD">
+                <option value="rx560">AMD Radeon RX 560 (Для базовых задач)</option>
+                <option value="rx570">AMD Radeon RX 570 (Для средних игр и работы с графикой)</option>
+                <option value="rx580">AMD Radeon RX 580 (для игр)</option>
+            </optgroup>
+            <optgroup label="Intel">
+                <option value="arcA380">Intel Arc A380 (Для офиса)</option>
+                <option value="arcA770">Intel Arc A770 (Для средних игр)</option>
+            </optgroup>
+        </optgroup>
+    </select>
+    <p>Теперь количество оперативной памяти:</p>
+    <select id="ram">
+        <option value="4">4 ГБ (В нынешних реалиях это очень мало, рекомендуем 8 ГБ)</option>
+        <option value="8">8 ГБ (Подходит для большинства задач)</option>
+        <option value="16">16 ГБ (Подходит для некоторых игр или требовательных программ)</option>
+        <option value="32">32 ГБ (Подходит для игр или очень требовательных программ)</option>
+    </select>
+    <p>Теперь выберем жесткий диск:</p>
+    <select id="hdd">
+        <option value="hdd0">0 ГБ (Только SSD)</option>
+        <option value="hdd500">500 ГБ (Для хранения файлов)</option>
+        <option value="hdd1000">1 ТБ (Как-то многовато)</option>
+        <option value="hdd2000">2 ТБ (Смысла нет столько ставить, только на сервера)</option>
+        <option value="hdd4000">4 ТБ (Только для серверов)</option>
+    </select>
+    <p>Теперь выберем SSD:</p>
+    <select id="ssd">
+        <option value="ssd0">0 ГБ (Только HDD)</option>
+        <option value="ssd120">120 ГБ (Только под систему)</option>
+        <option value="ssd240">240 ГБ (Для системы и пары программ)</option>
+        <option value="ssd480">480 ГБ (Для второй системы)</option>
+        <option value="ssd960">960 ГБ (Для сервера или геймеров)</option>
+    </select>
+    <p>Теперь выберем блок питания:</p>
+    <select id="psu">
+        <option value="psu300">300 Вт (Для офиса)</option>
+        <option value="psu500">500 Вт (Для большинства задач)</option>
+        <option value="psu700">700 Вт (Для игр)</option>
+        <option value="psu1000">1000 Вт (Для тяжелых игр или работы с тяжелыми программами)</option>
+    </select>
+    <p>Теперь выберем охлаждение:</p>
+    <select id="cooling">
+        <option value="cooling0">Без охлаждения (Только для энтузиастов)</option>
+        <option value="cooling1">Воздушное охлаждение (Для большинства задач)</option>
+        <option value="cooling2">Водяное охлаждение (Для игр)</option>
+        <option value="cooling3">Жидкостное охлаждение (Для тяжелых игр или работы с тяжелыми программами)</option>
+    </select>
+    <p>Итоговая конфигурация:</p>
+    <p>Обратите внимание, что итоговая цена указана без учета корпуса. Корпуса бывают разные: от дешевых до дорогих, в зависимости от ваших предпочтений и бюджета.</p>
+    <ul id="summary">
+        <li>Процессор: <span id="summary-cpu"></span></li>
+        <li>Видеокарта: <span id="summary-gpu"></span></li>
+        <li>Оперативная память: <span id="summary-ram"></span></li>
+        <li>Жесткий диск: <span id="summary-hdd"></span></li>
+        <li>SSD: <span id="summary-ssd"></span></li>
+        <li>Блок питания: <span id="summary-psu"></span></li>
+        <li>Охлаждение: <span id="summary-cooling"></span></li>
+    </ul>
+    <p>Примерная цена: <span id="total-price"></span> руб.</p>
+    <button class="b2" onclick="calculateSummary()">Подсчитать стоимость</button>
+    <a class='b1' href="index.html">Вернуться на главную</a>
     <div class="particle-container">
         <span class="particle"></span>
         <span class="particle"></span>
@@ -23,5 +164,39 @@
         <span class="particle"></span>
         <span class="particle"></span>
     </div>
+<script>
+function calculateSummary() {
+    const cpu = document.getElementById('cpu').value;
+    const gpu = document.getElementById('gpu').value;
+    const ram = document.getElementById('ram').value;
+    const hdd = document.getElementById('hdd').value;
+    const ssd = document.getElementById('ssd').value;
+    const psu = document.getElementById('psu').value;
+    const cooling = document.getElementById('cooling').value;
+
+    document.getElementById('summary-cpu').innerText = document.querySelector('#cpu option[value="' + cpu + '"]').innerText;
+    document.getElementById('summary-gpu').innerText = document.querySelector('#gpu option[value="' + gpu + '"]').innerText;
+    document.getElementById('summary-ram').innerText = document.querySelector('#ram option[value="' + ram + '"]').innerText;
+    document.getElementById('summary-hdd').innerText = document.querySelector('#hdd option[value="' + hdd + '"]').innerText;
+    document.getElementById('summary-ssd').innerText = document.querySelector('#ssd option[value="' + ssd + '"]').innerText;
+    document.getElementById('summary-psu').innerText = document.querySelector('#psu option[value="' + psu + '"]').innerText;
+    document.getElementById('summary-cooling').innerText = document.querySelector('#cooling option[value="' + cooling + '"]').innerText;
+
+    const prices = {
+        'i3': 5000, 'i5': 10000, 'i7': 15000, 'i9': 20000,
+        'ryzen3': 4000, 'ryzen5': 8000, 'ryzen7': 12000, 'ryzen9': 16000,
+        'irisxe': 3000, 'gtx1050': 7000, 'gtx1060': 10000, 'gtx1070': 15000, 'rtx3060': 20000, 'rtx4090': 30000,
+        'rx560': 6000, 'rx570': 9000, 'rx580': 12000, 'arcA380': 5000, 'arcA770': 10000,
+        '4': 2000, '8': 4000, '16': 8000, '32': 16000, '64': 32000,
+        'hdd0': 0, 'hdd500': 2000, 'hdd1000': 4000, 'hdd2000': 8000, 'hdd4000': 16000,
+        'ssd0': 0, 'ssd120': 2000, 'ssd240': 4000, 'ssd480': 8000, 'ssd960': 16000, 'ssd2000': 32000,
+        'psu300': 2000, 'psu500': 4000, 'psu700': 6000, 'psu1000': 8000,
+        'cooling0': 0, 'cooling1': 2000, 'cooling2': 4000, 'cooling3': 8000
+    };
+
+    const totalPrice = (prices[cpu] || 0) + (prices[gpu] || 0) + (prices[ram] || 0) + (prices[hdd] || 0) + (prices[ssd] || 0) + (prices[psu] || 0) + (prices[cooling] || 0);
+    document.getElementById('total-price').innerText = totalPrice;
+}
+</script>
 </body>
 </html>
